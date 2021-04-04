@@ -28,6 +28,8 @@
             </fieldset>
         </div>
     </form>
+
+    <a href="sign.in.php">未登録の方はこちら</a>
     
 </body>
 </html>
