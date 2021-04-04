@@ -19,22 +19,18 @@ if($status ==false){
     $view .= "<table border=1>";
     $view .= "<th>ID</th>";
     $view .= "<th>NAME</th>";
+    $view .= "<th>POSITION</th>";
     $view .= "<th>STATUS</th>";
-    $view .= "<th></th>";
     $view .= "<th>DATE</th>";
-    $view .= "<th>DELETE</th>";
-
     
     while( $result = $stmt->fetch(PDO::FETCH_ASSOC) ){
         // Selectデータの数だけ自動でループしてくれる
         $view .= "<tr>" ;
-        $view .= "<td>" . '<a href="view.php?id=' . $result["id"]. '">'. h($result["id"]) . "</td>" ;
-        $view .= "<td>" . h($result["name"]) . "</td>" ;
-        $view .= "<td>" . h($result["url"]) . "</td>" ;
-        $view .= "<td>" . h($result["comment"]) . "</td>" ;
-        $view .= "<td>" . h($result["file_path"]) . "</td>" ;
+        $view .= "<td>" . h($result["id"]) . "</td>" ;
+        $view .= "<td>" . h($result["u_name"]) . "</td>" ;
+        $view .= "<td>" . h($result["u_position"]) . "</td>" ;
+        $view .= "<td>" . h($result["life_flg"]) . "</td>" ;
         $view .= "<td>" . h($result["indate"]) . "</td>" ;
-        $view .= "<td>" . '<a href="delete.php?id=' . $result["id"]. '">'. '[削除]' . "</td>";
         $view .= "</tr>" ;   
     }
     $view .= "</table>";
