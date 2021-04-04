@@ -19,10 +19,10 @@
         <div class="jumbotron">
             <fieldset>
                 <legend>ユーザー登録</legend>
-                        <p>名前</p><input class="input" type="text" name="u_name" placeholder="書籍名">
-                        <p>ID</p><input class="input" type="text" name="u_id" placeholder="書籍URL">
-                        <p>パスワード</p><input class="input" type="text" name="u_pw" placeholder="書籍コメント">
-                        <p>ポジション</p><input class="input" type="text" name="u_status" placeholder="書籍コメント">
+                        <p>名前</p><input class="input" type="text" name="u_name" placeholder="名前">
+                        <p>ID</p><input class="input" type="text" name="u_id" placeholder="ID">
+                        <p>パスワード</p><input class="input" type="text" name="u_pw" placeholder="パスワード">
+                        <p>役職</p><input class="input" type="text" name="u_position" placeholder="役職">
                         <input class="" type="hidden" name="life_flg" value=1>
                         <button type="submit" class="button is-link" value="送信">送信</button>
              </fieldset>

@@ -6,7 +6,7 @@ if(
     !isset($_POST["u_name"]) || $_POST["u_name"] =="" ||
     !isset($_POST["u_id"]) || $_POST["u_id"] =="" ||
     !isset($_POST["u_pw"]) || $_POST["u_pw"] =="" ||
-    !isset($_POST["u_status"]) || $_POST["u_status"] ==""
+    !isset($_POST["u_position"]) || $_POST["u_position"] ==""
 ){
     exit('ParamError');
 }
@@ -16,7 +16,7 @@ if(
 $u_name = $_POST["u_name"];
 $u_id = $_POST["u_id"];
 $u_pw = $_POST["u_pw"];
-$u_status = $_POST["u_status"];
+$u_position = $_POST["u_position"];
 
 
 // DB接続
@@ -28,7 +28,7 @@ try {
 
 
 // データ登録SQL作成
-$sql = "INSERT INTO gs_user_table( id, u_name, u_id, u_pw, u_status, life_flg, indate )
+$sql = "INSERT INTO gs_user_table( id, u_name, u_id, u_pw, u_position, life_flg, indate )
 VALUES ( NULL, :a1, :a2, :a3, :a4, 1, sysdate() )";
 
 $stmt = $pdo->prepare($sql);
@@ -36,7 +36,7 @@ $stmt = $pdo->prepare($sql);
 $stmt -> bindValue(':a1', $u_name, PDO::PARAM_STR);
 $stmt -> bindValue(':a2', $u_id, PDO::PARAM_STR);
 $stmt -> bindValue(':a3', $u_pw, PDO::PARAM_STR);
-$stmt -> bindValue(':a4', $u_status, PDO::PARAM_INT);
+$stmt -> bindValue(':a4', $u_position, PDO::PARAM_INT);
 $status = $stmt -> execute();
 
 
