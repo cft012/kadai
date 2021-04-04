@@ -22,15 +22,17 @@ if($status ==false){
     $view .= "<th>POSITION</th>";
     $view .= "<th>STATUS</th>";
     $view .= "<th>DATE</th>";
+    $view .= "<th>DELETE</th>";
     
     while( $result = $stmt->fetch(PDO::FETCH_ASSOC) ){
         // Selectデータの数だけ自動でループしてくれる
         $view .= "<tr>" ;
-        $view .= "<td>" . h($result["id"]) . "</td>" ;
+        $view .= "<td>" . '<a href="user.view.php?id=' . $result["id"]. '">'. h($result["id"]) . "</td>" ;
         $view .= "<td>" . h($result["u_name"]) . "</td>" ;
         $view .= "<td>" . h($result["u_position"]) . "</td>" ;
         $view .= "<td>" . h($result["life_flg"]) . "</td>" ;
         $view .= "<td>" . h($result["indate"]) . "</td>" ;
+        $view .= "<td>" . '<a href="delete.user.php?id=' . $result["id"]. '">'. '[削除]' . "</td>";
         $view .= "</tr>" ;   
     }
     $view .= "</table>";
@@ -54,7 +56,10 @@ if($status ==false){
                 <p class="title is-1 is-spaced">Book Database</p>
             </div>
             <div class="nav_container">
-                <div class="user_read_box">
+                <div class="read_box">
+                    <a class="data_list" href="read.php">データリスト</a>
+                </div>
+                <div class="read_user_box">
                     <a class="user_list" href="user.read.php">ユーザーリスト</a>
                 </div>
                 <div class="registration_box">

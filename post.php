@@ -21,6 +21,15 @@ loginCheck();
                 <p class="title is-1 is-spaced">Book Database</p>
             </div>
             <div class="nav_container">
+                <div class="read_box">
+                    <a class="data_list" href="read.php">データリスト</a>
+                </div>
+                <div class="read_user_box">
+                    <a class="user_list" href="user.read.php">ユーザーリスト</a>
+                </div>
+                <div class="registration_box">
+                    <a class="registration" href="post.php">データの登録</a>
+                </div>
                 <div class="logout_box">
                     <a class="logout" href="logout.php">ログアウト</a>
                 </div>

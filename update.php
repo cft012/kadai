@@ -3,9 +3,9 @@ session_start();
 include("funcs.php");
 loginCheck();
 
-$id     = $_POST['id'];
-$name   = $_POST['name'];
-$url  = $_POST['url'];
+$id      = $_POST['id'];
+$name    = $_POST['name'];
+$url     = $_POST['url'];
 $comment = $_POST['comment'];
 
 try {

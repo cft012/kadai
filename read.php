@@ -59,7 +59,10 @@ if($status ==false){
                 <p class="title is-1 is-spaced">Book Database</p>
             </div>
             <div class="nav_container">
-                <div class="user_read_box">
+                <div class="read_box">
+                    <a class="data_list" href="read.php">データリスト</a>
+                </div>
+                <div class="read_user_box">
                     <a class="user_list" href="user.read.php">ユーザーリスト</a>
                 </div>
                 <div class="registration_box">
