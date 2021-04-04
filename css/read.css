@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+.title_container{
+    width: 50%;
+    margin: 20px auto;
+}
+
+.header_wrapper{
+    display: flex;
+}
+
+.nav_container{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.post_form>*{
+    margin-bottom: 10px;
+}

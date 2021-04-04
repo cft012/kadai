@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+.title_container{
+    width: 100%;
+    margin: 20px auto;
+}
+
+.jumbotron{
+    width: 200px;
+    margin: auto;
+}
+
+fieldset{
+    text-align: left;
+}
+
+fieldset>*{
+    margin-bottom: 10px;
+}
