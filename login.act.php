@@ -24,7 +24,7 @@ if($res == false){
     if( $val['id'] != "" ){
         $_SESSION["chk_ssid"] = session_id();
         $_SESSION["u_name"] = $val['u_name'];
-        header("Location: read.php");
+        header("Location: index.php");
     }else{
         header("Location: login.php");
     }

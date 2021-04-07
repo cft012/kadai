@@ -33,8 +33,8 @@
     <form action="search_result.php" method="get">
         <div class="jumbotron">
             <fieldset>
-                <input class="input" type="text" name="keyword" placeholder="検索">
-                <button type="submit" class="button is-link" value="検索">検索したい本</button>
+                <input class="input" type="text" name="keyword" placeholder="検索したい本">
+                <button type="submit" class="button is-link" value="検索">検索</button>
             </fieldset>
         </div>
     </form>
