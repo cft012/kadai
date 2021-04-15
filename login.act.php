@@ -9,10 +9,9 @@ try {
     exit( 'DbConnectionError:'.$e->getMessage());
 }
 
-$sql = "SELECT * FROM gs_user_table WHERE u_id=:lid AND u_pw=:lpw ";
+$sql = "SELECT * FROM gs_user_table WHERE u_id=:id AND life_flg=1";
 $stmt = $pdo->prepare($sql);
-$stmt -> bindValue(':lid', $lid);
-$stmt -> bindValue(':lpw', $lpw);
+$stmt -> bindValue(':id', $lid, PDO::PARAM_STR);
 $res = $stmt->execute();
 
 if($res == false){
@@ -21,7 +20,8 @@ if($res == false){
 }else{
     $val = $stmt->fetch();
 
-    if( $val['id'] != "" ){
+    // if( $lpw === $val['u_pw'] ){
+    if( password_verify($lpw, $val["u_pw"])){
         $_SESSION["chk_ssid"] = session_id();
         $_SESSION["u_name"] = $val['u_name'];
         header("Location: index.php");
@@ -29,6 +29,3 @@ if($res == false){
         header("Location: login.php");
     }
 }
-
-exit();
-?>

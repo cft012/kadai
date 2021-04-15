@@ -33,7 +33,8 @@ if($status ==false){
         $view .= "<td>" . h($result["name"]) . "</td>" ;
         $view .= "<td>" . h($result["url"]) . "</td>" ;
         $view .= "<td>" . h($result["comment"]) . "</td>" ;
-        $view .= "<td>" . h($result["file_path"]) . "</td>" ;
+        // $view .= "<td>" . h($result["file_path"]) . "</td>" ;
+        $view .= "<td>" . '<img src="./' . h($result["file_path"]) . '" width="100">' . "</td>" ;
         $view .= "<td>" . h($result["indate"]) . "</td>" ;
         $view .= "<td>" . '<a href="delete.php?id=' . $result["id"]. '">'. '[削除]' . "</td>";
         $view .= "</tr>" ;   

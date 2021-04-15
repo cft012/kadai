@@ -1,6 +1,6 @@
 <?php
-// session_start();
-// include("funcs.php");
+session_start();
+include("funcs.php");
 
 if(
     !isset($_POST["u_name"]) || $_POST["u_name"] =="" ||
@@ -15,7 +15,7 @@ if(
 // POSTデータ取得
 $u_name = $_POST["u_name"];
 $u_id = $_POST["u_id"];
-$u_pw = $_POST["u_pw"];
+$u_pw = password_hash($_POST["u_pw"], PASSWORD_DEFAULT);
 $u_position = $_POST["u_position"];
 
 
@@ -41,12 +41,19 @@ $status = $stmt -> execute();
 
 
 // データ登録処理後
-if($status ==false){
+if($status == false){
     $error = $stmt->errorInfo();
     exit("QueryError:".$error[2]);
 }else{
-    header("Location:login.php");
-    exit;
+    $val = $stmt->fetch();
+
+    if( $val['id'] != "" ){
+        $_SESSION["chk_ssid"] = session_id();
+        $_SESSION["u_name"] = $val['u_name'];
+        header("Location: index.php");
+    }else{
+        header("Location: login.php");
+    }
 }
 
 ?>
